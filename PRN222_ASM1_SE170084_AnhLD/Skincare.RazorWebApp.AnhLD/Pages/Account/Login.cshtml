@@ -1,0 +1,59 @@
+﻿@page
+@model Skincare.RazorWebApp.AnhLD.Pages.Account.LoginModel
+@{
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Skincare.RazorWebApp.SignalR.AnhLD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Skincare.RazorWebApp.AnhLD.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Skincare.RazorWebApp.SignalR.AnhLD - <span class="text-danger">PRN222</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <h2 class="text-center">Log-in</h2>
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert-message">@TempData["Message"]</div>
+                    }
+                    <form method="post">
+                        <div class="form-group">
+                            <label asp-for="UserName"></label>
+                            <input type="text" class="form-control" asp-for="UserName" required />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input type="password" class="form-control" asp-for="Password" required />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        © 2025 Skincare. Powered by MARVINLE. <a href="#">Privacy Policy</a>
+    </footer>
+</body>
