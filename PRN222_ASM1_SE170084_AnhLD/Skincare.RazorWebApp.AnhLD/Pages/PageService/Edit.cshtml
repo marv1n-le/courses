@@ -1,0 +1,76 @@
+﻿@page
+@model Skincare.RazorWebApp.AnhLD.Pages.PageService.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ServiceProviderInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ServiceProviderInfo.ProviderId" />
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="ServiceProviderInfo.ProviderName" class="control-label"></label>
+                <input asp-for="ServiceProviderInfo.ProviderName" class="form-control" />
+                <span asp-validation-for="ServiceProviderInfo.ProviderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceProviderInfo.ServiceType" class="control-label"></label>
+                <input asp-for="ServiceProviderInfo.ServiceType" class="form-control" />
+                <span asp-validation-for="ServiceProviderInfo.ServiceType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceProviderInfo.Address" class="control-label"></label>
+                <input asp-for="ServiceProviderInfo.Address" class="form-control" />
+                <span asp-validation-for="ServiceProviderInfo.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceProviderInfo.ContactNumber" class="control-label"></label>
+                <input asp-for="ServiceProviderInfo.ContactNumber" class="form-control" />
+                <span asp-validation-for="ServiceProviderInfo.ContactNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceProviderInfo.Email" class="control-label"></label>
+                <input asp-for="ServiceProviderInfo.Email" class="form-control" />
+                <span asp-validation-for="ServiceProviderInfo.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceProviderInfo.WorkingHours" class="control-label"></label>
+                <input asp-for="ServiceProviderInfo.WorkingHours" class="form-control" />
+                <span asp-validation-for="ServiceProviderInfo.WorkingHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceProviderInfo.SpecialistInCharge" class="control-label"></label>
+                <input asp-for="ServiceProviderInfo.SpecialistInCharge" class="form-control" />
+                <span asp-validation-for="ServiceProviderInfo.SpecialistInCharge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceProviderInfo.ProviderRating" class="control-label"></label>
+                <input asp-for="ServiceProviderInfo.ProviderRating" class="form-control" />
+                <span asp-validation-for="ServiceProviderInfo.ProviderRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceProviderInfo.Promotions" class="control-label"></label>
+                <input asp-for="ServiceProviderInfo.Promotions" class="form-control" />
+                <span asp-validation-for="ServiceProviderInfo.Promotions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

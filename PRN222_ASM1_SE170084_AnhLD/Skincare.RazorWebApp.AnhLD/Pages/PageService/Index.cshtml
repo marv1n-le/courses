@@ -1,0 +1,87 @@
+﻿@page
+@model Skincare.RazorWebApp.AnhLD.Pages.PageService.IndexModel
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Index of Service Provider Info</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderInfo[0].ProviderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderInfo[0].ServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderInfo[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderInfo[0].ContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderInfo[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderInfo[0].WorkingHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderInfo[0].SpecialistInCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderInfo[0].ProviderRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderInfo[0].Promotions)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ServiceProviderInfo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkingHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialistInCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Promotions)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ProviderId" class="btn btn-info">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ProviderId" class="btn btn-warning">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ProviderId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

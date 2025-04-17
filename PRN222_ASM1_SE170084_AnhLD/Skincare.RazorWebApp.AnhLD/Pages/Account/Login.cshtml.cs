@@ -41,7 +41,7 @@ namespace Skincare.RazorWebApp.AnhLD.Pages.Account
 
                 Response.Cookies.Append("UserName", userAccount.UserName);
                 //return RedirectToPage("/Customer/Index");
-                return RedirectToPage("/Index");
+                return RedirectToPage("/PageService/Index");
             }
             else
             {

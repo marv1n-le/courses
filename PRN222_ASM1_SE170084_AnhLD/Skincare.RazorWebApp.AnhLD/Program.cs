@@ -19,7 +19,7 @@ namespace Skincare.RazorWebApp.AnhLD
     .AddCookie(options =>
     {
         options.AccessDeniedPath = "/Account/Forbidden";
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
     });
 
             builder.Services.AddRazorPages();
