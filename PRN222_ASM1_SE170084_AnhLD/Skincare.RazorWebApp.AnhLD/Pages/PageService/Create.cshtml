@@ -19,7 +19,6 @@
                 <span asp-validation-for="ServiceProviderInfo.ProviderId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <span class="text-danger">*</span>
                 <label asp-for="ServiceProviderInfo.ProviderName" class="control-label"></label>
                 <input asp-for="ServiceProviderInfo.ProviderName" class="form-control" />
                 <span asp-validation-for="ServiceProviderInfo.ProviderName" class="text-danger"></span>
@@ -78,3 +77,45 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script>
+        "use strict";
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/SkincareHub").build();
+
+    //start connection
+    connection.start().then(function () {
+        console.log("Connected to the SignalR Hub");
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+    //Click button
+    document.getElementById("btnHubCreate").addEventListener("click", function (event) {
+
+        alert("btnHubCreate");
+
+
+        var dataObj = JSON.stringify({
+            serviceId: document.getElementById("Service_ServiceId").value,
+            serviceName: document.getElementById("Service_ServiceName").value,
+            serviceImage: document.getElementById("Service_ServiceImage").value,
+            description: document.getElementById("Service_Description").value,
+            skinConcern: document.getElementById("Service_SkinConcern").value,
+            price: parseInt(document.getElementById("Service_Price").value),
+            duration: parseInt(document.getElementById("Service_Duration").value),
+            categoryId: parseInt(document.getElementById("Service_CategoryId").value),
+            createdDate: document.getElementById("Service_CreatedDate").value,
+            updatedDate: document.getElementById("Service_UpdatedDate").value || null,
+            isActive: document.getElementById("Service_IsActive").value
+        })
+
+        console.log(dataObj);
+        connection.invoke("HubCreate_Service", dataObj).catch(function (err) {
+            return console.error(err.toString());
+        });
+        event.preventDefault();
+    });
+
+</script>
+

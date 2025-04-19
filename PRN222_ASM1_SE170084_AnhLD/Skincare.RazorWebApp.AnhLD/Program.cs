@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Skincare.RazorWebApp.AnhLD.Hubs;
 using Skincare.Services.Interface;
 using Skincare.Services.Service;
 
@@ -24,6 +25,8 @@ namespace Skincare.RazorWebApp.AnhLD
 
             builder.Services.AddRazorPages();
 
+            builder.Services.AddSignalR();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -42,6 +45,9 @@ namespace Skincare.RazorWebApp.AnhLD
             app.UseAuthorization();
 
             app.MapRazorPages().RequireAuthorization();
+
+            //SignalR
+            app.MapHub<SkincareHub>("/skincarehub");
 
             app.Run();
         }

@@ -85,3 +85,46 @@
 }
     </tbody>
 </table>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script>
+     "use strict";
+    var connection = new signalR.HubConnectionBuilder().withUrl("/SkincareHub").build();
+
+    //start connection
+    connection.start().then(function () {
+        console.log("Connected to the SignalR Hub");
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+
+    connection.on("Receiver_DeleteService", function (ServiceId) {
+        $('#serviceListBody').find(`tr[id='${ServiceId}']`).remove();
+    });
+
+
+    connection.on("Receiver_CreateService", function (Service) {
+        console.log(Service);
+        var trServiceList = `
+            <tr>
+                <td>${Service.ServiceName}</td>
+                <td>${Service.ServiceImage}</td>
+                <td>${Service.Description}</td>
+                <td>${Service.SkinConcern}</td>
+                <td>${Service.Price}</td>
+                <td>${Service.Duration}</td>
+                <td>${Service.CreatedDate}</td>
+                <td>${Service.UpdatedDate}</td>
+                <td>${Service.IsActive}</td>
+                <td>${Service.Category}</td>
+            </tr>
+        `;
+
+        alert(trBankAcc);
+
+        $('#serviceListBody').append(trServiceList)
+
+    });
+
+</script>
+

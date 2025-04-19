@@ -9,24 +9,21 @@ body {
     align-items: center;
     height: 100vh;
 }
-/* Cập nhật chiều rộng ô nhập liệu */
-/* Cập nhật lại kích thước và chiều rộng của các ô nhập liệu */
 input[type="text"], input[type="password"] {
-    width: 100%; /* Chiều rộng chiếm hết không gian */
-    max-width: 450px; /* Đặt chiều rộng tối đa */
-    padding: 15px; /* Tăng padding để các ô rộng hơn và dễ nhập */
+    width: 100%;
+    max-width: 450px; 
+    padding: 15px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: border 0.3s;
-    margin-bottom: 20px; /* Tăng khoảng cách giữa các ô nhập */
+    margin-bottom: 20px;
 }
 
-/* Điều chỉnh chiều rộng của form khi màn hình lớn hơn */
 @media (min-width: 576px) {
     .main-content {
-        width: 100%; /* Tự động mở rộng chiều rộng */
-        max-width: 500px; /* Điều chỉnh chiều rộng tối đa cho form login */
+        width: 100%;
+        max-width: 500px; 
     }
 }
 

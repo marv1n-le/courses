@@ -74,3 +74,31 @@
         <a asp-page="./Index">Back to List</a>
     </form>
 </div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script>
+        "use strict";
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/SkincareHub").build();
+
+    //start connection
+    connection.start().then(function () {
+        console.log("Connected to the SignalR Hub");
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+    //Click button
+    document.getElementById("btnHubDelete").addEventListener("click", function (event) {
+
+        alert("btnHubDelete");
+
+        var dataObj = document.getElementById("Service_ServiceId").value;
+
+        console.log(dataObj);
+        connection.invoke("HubDelete_Service", dataObj).catch(function (err) {
+            return console.error(err.toString());
+        });
+        event.preventDefault();
+    });
+
+</script>
