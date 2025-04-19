@@ -22,5 +22,33 @@ namespace Skincare.Services.Service
         {
             return await _repository.GetAllServiceProvidersAsync();
         }
+
+        public async Task<ServiceProviderInfo> GetServiceProviderByIdAsync(int id)
+        {
+            return await _repository.GetServiceProviderByIdAsync(id);
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var items = await _repository.GetServiceProviderByIdAsync(id);
+            if (items != null)
+            {
+                var result = await _repository.RemoveAsync(items);
+                return result;
+            }
+            return false;
+        }
+
+        public async Task<int> CreateAsync(ServiceProviderInfo serviceProviderInfo)
+        {
+            var result = await _repository.CreateAsync(serviceProviderInfo);
+            return result;
+        }
+        
+        public async Task<int> UpdateAsync(ServiceProviderInfo serviceProviderInfo)
+        {
+            var result = await _repository.UpdateAsync(serviceProviderInfo);
+            return result;
+        }
     }
 }
