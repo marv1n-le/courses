@@ -14,5 +14,6 @@ namespace Skincare.Repositories.Repository
         {
         }
        
+        public CustomerServiceHistoryRepository(SP25_PRN222_W3_PRJ_G1_SkinCareBookingServiceContext context) => _context = context;
     }
 }

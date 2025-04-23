@@ -15,6 +15,8 @@ namespace Skincare.Repositories.Repository
         {
         }
 
+        public ServiceProviderInfoRepository(SP25_PRN222_W3_PRJ_G1_SkinCareBookingServiceContext context) => _context = context;
+
         public async Task<List<ServiceProviderInfo>> GetAllServiceProvidersAsync()
         {
             var items = await _context.ServiceProviderInfos

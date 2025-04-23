@@ -15,6 +15,7 @@ namespace Skincare.Repositories.Repository
         {
         }
 
+        public SystemUserAccountRepository(SP25_PRN222_W3_PRJ_G1_SkinCareBookingServiceContext context) => _context = context;
         public async Task<SystemUserAccount?> GetUserAccount(string userName, string password)
         {
             var userAccount = await _context.SystemUserAccounts

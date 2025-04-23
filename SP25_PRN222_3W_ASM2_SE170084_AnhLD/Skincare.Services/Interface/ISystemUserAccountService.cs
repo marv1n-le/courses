@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Skincare.Services.Interface
 {
-    public interface ISystemAccountAccountService
+    public interface ISystemUserAccountService
     {
         Task<SystemUserAccount?> GetUserAccount(string username, string password);
     }

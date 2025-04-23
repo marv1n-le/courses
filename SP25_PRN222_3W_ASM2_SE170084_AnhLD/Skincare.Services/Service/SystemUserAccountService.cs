@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Skincare.Services.Service
 {
-    public class SystemUserAccountService : ISystemAccountAccountService
+    public class SystemUserAccountService : ISystemUserAccountService
     {
         private readonly SystemUserAccountRepository _repository;
         public SystemUserAccountService()
