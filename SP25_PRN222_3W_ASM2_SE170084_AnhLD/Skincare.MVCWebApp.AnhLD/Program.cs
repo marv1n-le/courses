@@ -1,3 +1,6 @@
+using Skincare.Services.Interface;
+using Skincare.Services.Service;
+
 namespace Skincare.MVCWebApp.AnhLD
 {
     public class Program
@@ -8,6 +11,11 @@ namespace Skincare.MVCWebApp.AnhLD
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<IServiceProviders, ServiceProviders>();
+
+            builder.Services.AddScoped<IServiceProviderInfoService, ServiceProviderInfoService>();
+            builder.Services.AddScoped<ICustomerServiceHistoryService, CustomerServiceHistoryService>();
 
             var app = builder.Build();
 

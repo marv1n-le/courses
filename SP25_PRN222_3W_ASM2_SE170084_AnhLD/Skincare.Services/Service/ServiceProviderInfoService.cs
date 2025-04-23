@@ -14,9 +14,9 @@ namespace Skincare.Services.Service
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public ServiceProviderInfoService(UnitOfWork unitOfWork)
+        public ServiceProviderInfoService()
         {
-            _unitOfWork = unitOfWork;
+            _unitOfWork ??= new UnitOfWork();
         }
 
         public async Task<List<ServiceProviderInfo>> GetAllServiceProvidersAsync()

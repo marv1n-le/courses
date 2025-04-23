@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Skincare.Repositories.Models.ServiceProviderInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Service Provider Infomation List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkingHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialistInCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Promotions)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkingHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialistInCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Promotions)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProviderId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProviderId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProviderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

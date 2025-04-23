@@ -11,6 +11,6 @@ namespace Skincare.Services.Interface
     {
         ICustomerServiceHistoryService CustomerServiceHistoryService { get; }
         IServiceProviderInfoService ServiceProviderInfoService { get; }
-        ISystemUserAccountService SystemAccountService { get; }
+        ISystemUserAccountService SystemUserAccountService { get; }
     }
 }

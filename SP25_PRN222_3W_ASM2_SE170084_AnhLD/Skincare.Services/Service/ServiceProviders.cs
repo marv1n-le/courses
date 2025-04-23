@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Skincare.Services.Service
 {
-    public class ServiceProviders
+    public class ServiceProviders : IServiceProviders 
     {
         private IServiceProviderInfoService _serviceProviderInfoService;
         private ICustomerServiceHistoryService _customerServiceHistoryService;
