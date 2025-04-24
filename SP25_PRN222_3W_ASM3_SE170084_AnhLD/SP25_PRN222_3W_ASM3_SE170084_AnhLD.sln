@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skincare.Services", "..\SP25_PRN222_3W_ASM4_SE170084_AnhLD\Skincare.Services\Skincare.Services.csproj", "{ED20A667-5459-11A9-AE9B-8B1810CB2D28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skincare.Repositories", "..\SP25_PRN222_3W_ASM4_SE170084_AnhLD\Skincare.Repositories\Skincare.Repositories.csproj", "{886AE5E7-75E8-BA2D-20A8-DFACFE447D2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skincare.BlazorApp.AnhLD", "Skincare.BlazorApp.AnhLD\Skincare.BlazorApp.AnhLD.csproj", "{E99673F8-013D-48C4-96D5-2189334D5926}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED20A667-5459-11A9-AE9B-8B1810CB2D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED20A667-5459-11A9-AE9B-8B1810CB2D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED20A667-5459-11A9-AE9B-8B1810CB2D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED20A667-5459-11A9-AE9B-8B1810CB2D28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886AE5E7-75E8-BA2D-20A8-DFACFE447D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886AE5E7-75E8-BA2D-20A8-DFACFE447D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886AE5E7-75E8-BA2D-20A8-DFACFE447D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886AE5E7-75E8-BA2D-20A8-DFACFE447D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E99673F8-013D-48C4-96D5-2189334D5926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E99673F8-013D-48C4-96D5-2189334D5926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E99673F8-013D-48C4-96D5-2189334D5926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E99673F8-013D-48C4-96D5-2189334D5926}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B33B8C61-F198-458E-8059-EC53BBA986D1}
+	EndGlobalSection
+EndGlobal
